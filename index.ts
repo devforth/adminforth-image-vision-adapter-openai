@@ -59,7 +59,7 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
       })),
     ];
 
-    console.log("Request body:", JSON.stringify({
+    process.env.HEAVY_DEBUG && console.log("Request body:", JSON.stringify({
         model: this.options.model,
         input: [
           {
@@ -83,7 +83,7 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
       })
     });
     const data = await resp.json();
-    console.log("Response:", data);
+    process.env.HEAVY_DEBUG && console.log("Response:", data);
 
     return {
       response: data.output[0].content[0].text,
