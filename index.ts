@@ -86,7 +86,7 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
     process.env.HEAVY_DEBUG && console.log("Response:", data);
 
     return {
-      response: data.output[0].content[0].text,
+      response: data,
       error: data.error
     };
   }
