@@ -14,7 +14,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "adminforth": "^2.4.0-next.100",
     "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "adminforth": "^2.13.0-next.56"
   }
 }
