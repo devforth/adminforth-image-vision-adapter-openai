@@ -20,7 +20,7 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
   inputFileExtensionSupported(): string[] {
     return ['png', 'jpeg', 'jpg', 'webp', 'gif'];
   }
-
+ 
   async generate(params: {
     prompt: string,
     inputFileUrls: string[],
