@@ -8,7 +8,7 @@ export interface AdapterOptions {
 
   /**
    * Model name. Go to https://platform.openai.com/docs/models, select model and copy name.
-   * Default is `dall-e-2`. Use e.g. more expensive `dall-e-3`  or `gpt-image-1` for more powerful model.
+   * Default is `gpt-6-luna`.
    */
   model?: string;
 
