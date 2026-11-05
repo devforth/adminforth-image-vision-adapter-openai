@@ -7,7 +7,7 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
 
   constructor(options: AdapterOptions) {
     this.options = options;
-    this.options.model = options.model || 'gpt-4.1-mini';
+    this.options.model = options.model || 'gpt-6-luna';
   }
 
   validate() {
