@@ -85,9 +85,17 @@ export default class ImageVisionAdapterOpenAI implements ImageVisionAdapter {
     const data = await resp.json();
     process.env.HEAVY_DEBUG && console.log("Response:", data);
 
-    return {
-      response: data,
-      error: data.error
-    };
+    if (data.error) {
+      return { response: null, error: data.error.message };
+    }
+    // reasoning models put any number of reasoning items before the message
+    const text = data.output
+      .find(item => item.type === 'message')
+      ?.content.find(part => part.type === 'output_text')
+      ?.text;
+    if (!text) {
+      return { response: null, error: `OpenAI returned no text, status: ${data.status}` };
+    }
+    return { response: text };
   }
 }
